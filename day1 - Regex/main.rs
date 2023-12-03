@@ -62,15 +62,15 @@ fn translate(before: &str) -> String {
             ).unwrap();
     }
     
-    let mut result: String = TEXTONE_REGEX.replace_all(before, "1").to_string();
-    result = TEXTTWO_REGEX.replace_all(&result, "2").to_string();
-    result = TEXTTHREE_REGEX.replace_all(&result, "3").to_string();
-    result = TEXTFOUR_REGEX.replace_all(&result, "4").to_string();
-    result = TEXTFIVE_REGEX.replace_all(&result, "5").to_string();
-    result = TEXTSIX_REGEX.replace_all(&result, "6").to_string();
-    result = TEXTSEVEN_REGEX.replace_all(&result, "7").to_string();
-    result = TEXTEIGHT_REGEX.replace_all(&result, "8").to_string();
-    result = TEXTNINE_REGEX.replace_all(&result, "9").to_string();
+    let mut result: String = TEXTONE_REGEX.replace_all(before, "on1e").to_string();
+    result = TEXTTWO_REGEX.replace_all(&result, "t2wo").to_string();
+    result = TEXTTHREE_REGEX.replace_all(&result, "thr3ee").to_string();
+    result = TEXTFOUR_REGEX.replace_all(&result, "fo4ur").to_string();
+    result = TEXTFIVE_REGEX.replace_all(&result, "fi5ve").to_string();
+    result = TEXTSIX_REGEX.replace_all(&result, "s6ix").to_string();
+    result = TEXTSEVEN_REGEX.replace_all(&result, "se7ven").to_string();
+    result = TEXTEIGHT_REGEX.replace_all(&result, "eig8ht").to_string();
+    result = TEXTNINE_REGEX.replace_all(&result, "ni9ne").to_string();
     return result;
 }
 
@@ -99,7 +99,7 @@ fn main() -> Result<(), Error>{
             let numbers = format!("{}{}", after.chars().nth(0).unwrap() , after.chars().nth_back(0).unwrap());
             let number: i64 = numbers.trim().parse().expect("Not a number");
             sum += number;
-            println!("{} - {} - {} - {}", sum, eachline, after, numbers );
+            println!("{} - {} - {} - {} - {}", sum, eachline, translated_text_to_numbers, after, numbers );
         }
         if after.len() < 2{
             let numbers = format!("{}{}", after.chars().nth(0).unwrap() ,after.chars().nth(0).unwrap());
